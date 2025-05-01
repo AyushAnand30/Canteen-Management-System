@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Dish</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+            </ul>
+        </nav>
+        <div class="hero-banner">
+            <h1>The Daily Dish Welcomes You!!!</h1>
+            <p>Enjoy hassle free ordering in Brainware University</p>
+            <a href="Menu.html" class="cta-btn">Explore Menu</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Today's Special Section -->
+        <section id="specials">
+            <h2 class="section-title">Today's Special</h2>
+            <div class="menu-item">
+                <img src="/Asset/Biryani.jpg" alt="Chicken Biryani" class="menu-item-img"> <!-- Add your special image -->
+                <h3>Chicken Biryani</h3>
+                <p>Price: ₹100</p>
+                <p>Category:  Non Vegetarian</p>
+                <button class="add-to-order">Add to Tray</button>
+            </div>
+            <div class="menu-item">
+                <img src="/Asset/Chicken.jpeg" alt="Special Chicken Wrap" class="menu-item-img"> <!-- Add your special image -->
+                <h3>Fried Rice & Chicken Chilli</h3>
+                <p>Price: ₹80</p>
+                <p>Category: Non-Vegitarian</p>
+                <button class="add-to-order">Add to Tray</button>
+            </div>
+            <div class="menu-item">
+                <img src="/Asset/Rajma.jpg" alt="Special Chicken Wrap" class="menu-item-img"> <!-- Add your special image -->
+                <h3>Rajma Chawal</h3>
+                <p>Price: ₹60</p>
+                <p>Category: Vegitarian</p>
+                <button class="add-to-order">Add to Tray</button>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
+            <h2 class="section-title">Give Feedback</h2>
+            <form id="feedback-form">
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+                <br><br>
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                <br><br>
+                <button type="submit" class="cta-btn">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; The Daily Dish</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - The Daily Dish</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    #tray-icon {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-weight: bold;
+    }
+
+    .checkout-container {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+
+    .checkout-container h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    #cart-items {
+      margin-bottom: 1rem;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .summary {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .checkout-btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Checkout</h1>
+    <div id="tray-icon">🛒 Tray: <span id="tray-count">0</span></div>
+  </header>
+
+  <main class="checkout-container">
+    <h2>Your Tray</h2>
+    <div id="cart-items"></div>
+
+    <div class="summary">
+      <p>Total Items: <span id="item-count">0</span></p>
+      <p>Total Price: ₹<span id="total-price">0</span></p>
+    </div>
+
+    <button onclick="completeOrder()" class="checkout-btn">Complete Order</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Daily Dish</p>
+  </footer>
+
+  <script>
+    // Simulated tray/cart items – Replace with localStorage in real use
+    const cart = [
+      { name: "Matar Paneer", price: 40 },
+      { name: "Chicken Curry", price: 45 },
+      { name: "Roti", price: 5 }
+    ];
+
+    function renderCart() {
+      const cartContainer = document.getElementById("cart-items");
+      const trayCount = document.getElementById("tray-count");
+      const itemCount = document.getElementById("item-count");
+      const totalPrice = document.getElementById("total-price");
+
+      cartContainer.innerHTML = "";
+      let total = 0;
+
+      cart.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "item-row";
+        div.innerHTML = `<span>${item.name}</span><span>₹${item.price}</span>`;
+        cartContainer.appendChild(div);
+        total += item.price;
+      });
+
+      trayCount.innerText = cart.length;
+      itemCount.innerText = cart.length;
+      totalPrice.innerText = total;
+    }
+
+    function completeOrder() {
+      // Redirect to QR code page
+      window.location.href = "QR.html";
+    }
+
+    // Run on load
+    renderCart();
+  </script>
+</body>
+</html>

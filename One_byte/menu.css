@@ -1,0 +1,150 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header and Tray Icon */
+  header {
+    background-color: #d9232e;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    position: relative;
+    text-align: center;
+  }
+  
+  #tray-icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: white;
+    color: #d9232e;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Section Titles */
+  .menu-container {
+    padding: 2rem 1rem;
+  }
+  
+  .menu-section {
+    margin-bottom: 3rem;
+  }
+  
+  .menu-section h2 {
+    font-size: 1.8rem;
+    background-color: #ffd166;
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #222;
+  }
+  
+  /* Grid Layout */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Menu Card */
+  .menu-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-card button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d9232e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-card button:hover {
+    background-color: #b71c1c;
+  }
+  
+  .menu-card button::before {
+    content: "🛒";
+    font-size: 1rem;
+  }
+  
+  /* Toggle Buttons */
+  .filter-switches {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-switches button {
+    padding: 10px 24px;
+    margin: 5px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ccc;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-switches button.active-veg {
+    background-color: #28a745;
+  }
+  
+  .filter-switches button.active-nonveg {
+    background-color: #dc3545;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #d9232e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  
+  /* Responsive Fixes */
+  @media (max-width: 500px) {
+    #tray-icon {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .menu-card button {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+  }
+  

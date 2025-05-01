@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Canteen Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: rgba(255, 250, 234, 0.85);
+      text-align: center;
+      padding: 20px;
+      max-width: 320px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .logo img {
+      width: 60px;
+      margin-bottom: 10px;
+      border-radius: 60px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-family: "Comic Relief", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: #000;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #ccc;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .input-container span {
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .input-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .submit-link {
+      background-color: #000;
+      color: #f7f5f2;
+      font-weight: bold;
+      text-decoration: none;
+      width: 100%;
+      display: inline-block;
+      padding: 12px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #000;
+      margin: 20px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: .75em;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: .75em;
+    }
+
+    .google-btn {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .terms {
+      font-size: 12px;
+      margin-top: 20px;
+      color: #4d2600;
+    }
+
+    .terms a {
+      color: #4d2600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="logo">
+    <img src="/Asset/Logo.jpg" alt="College Logo">
+  </div>
+  <h2>The Daily Dish</h2>
+  <p>Enter your mobile number to order food</p>
+
+  <div class="input-container">
+    <span>+91</span>
+    <input type="tel" name="mobile" placeholder="Enter 10 digit mobile number" maxlength="10" required>
+  </div>
+  <a href="OTP.html" class="submit-link">LOGIN</a>
+
+  <div class="divider">or</div>
+
+  <p>Login Using</p>
+  <button class="google-btn">
+    <img src="/Asset/Google2.jpg" width="20" alt="Google logo">
+    Sign in with Google
+  </button>
+
+  <p class="terms">
+    By logging in, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a>, and <a href="#">Canteen Policy</a>
+  </p>
+</div>
+
+</body>
+</html>

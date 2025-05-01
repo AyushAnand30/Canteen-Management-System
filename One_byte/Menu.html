@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - The Daily Dish</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        #tray-icon {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: white;
+            color: #d9232e;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        #tray-icon:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Add basic styling for buttons */
+        .active-veg {
+            background-color: #28a745 !important;
+        }
+
+        .active-nonveg {
+            background-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Full Menu</h1>
+        <a id="tray-icon" href="Tray.html">🛒 Tray: <span id="tray-count">0</span></a>
+    </header>
+
+    <main class="menu-container">
+        <!-- Switch Buttons -->
+        <div class="filter-switches">
+            <button id="veg-btn" onclick="toggleVeg()">Veg Only</button>
+            <button id="nonveg-btn" onclick="toggleNonVeg()">Non-Veg Only</button>
+        </div>
+
+        <!-- Vegetarian Section -->
+        <section class="menu-section">
+            <h2>Vegetarian Items</h2>
+            <div class="menu-grid">
+                <div class="menu-card veg">Matar Paneer- ₹40 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Rajma Chawal - ₹50 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Aloo Paratha - ₹40 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Veg Thali - ₹40 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Aalu Posto - ₹20 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Dal - ₹15 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Paneer Chilli - ₹50 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Veg Pulao - ₹30 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Roti(1 Pc) - ₹5 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card veg">Rice(Full) - ₹15 <button onclick="addToTray()">Add to Tray</button></div>
+            </div>
+        </section>
+
+        <!-- Non-Vegetarian Section -->
+        <section class="menu-section">
+            <h2>Non-Vegetarian Items</h2>
+            <div class="menu-grid">
+                <div class="menu-card nonveg">Chicken Thali - ₹80 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Egg Thali - ₹55 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Fish Thali- ₹70 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Chicken Curry - ₹45 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Fried Fish - ₹30 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Omellete - ₹15 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Mutton Curry - ₹90 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Egg Roll - ₹40 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Chicken Roll - ₹60 <button onclick="addToTray()">Add to Tray</button></div>
+                <div class="menu-card nonveg">Chicken Noodles - ₹70 <button onclick="addToTray()">Add to Tray</button></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Daily Dish</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let vegActive = false;
+        let nonvegActive = false;
+        let trayCount = 0;
+
+        function toggleVeg() {
+            vegActive = !vegActive;
+            nonvegActive = false;
+            updateButtons();
+            filterMenu();
+        }
+
+        function toggleNonVeg() {
+            nonvegActive = !nonvegActive;
+            vegActive = false;
+            updateButtons();
+            filterMenu();
+        }
+
+        function updateButtons() {
+            document.getElementById("veg-btn").classList.toggle("active-veg", vegActive);
+            document.getElementById("nonveg-btn").classList.toggle("active-nonveg", nonvegActive);
+        }
+
+        function filterMenu() {
+            document.querySelectorAll('.menu-card').forEach(card => {
+                const isVeg = card.classList.contains('veg');
+                const isNonVeg = card.classList.contains('nonveg');
+
+                if (vegActive && isVeg) card.style.display = 'block';
+                else if (nonvegActive && isNonVeg) card.style.display = 'block';
+                else if (!vegActive && !nonvegActive) card.style.display = 'block';
+                else card.style.display = 'none';
+            });
+        }
+
+        function addToTray() {
+            trayCount++;
+            document.getElementById("tray-count").innerText = trayCount;
+        }
+    </script>
+</body>
+</html>
