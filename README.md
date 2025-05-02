@@ -25,7 +25,7 @@ Welcome to our hackathon project: A Smart Canteen Web App designed for modern ed
 🧩 Pages & Flow
 🔐 Login Page
 
-Enter Roll No / Email
+Enter Phone No / Google Login
 
 Redirects to OTP Page
 
@@ -43,7 +43,7 @@ Navigate to menu and profile
 
 🧾 Menu Page
 
-Displays categorized items (e.g. Breakfast, Lunch)
+Displays Menu Items
 
 Filter by veg/non-veg
 
@@ -65,7 +65,7 @@ JavaScript (ES6)
 
 localStorage for cart state
 
- Netlify for deployment
+Netlify for deployment
 
 📁 Folder Structure (Sample)
 pgsql
@@ -95,12 +95,12 @@ smart-canteen/
 
 [Pragati Khatri]
 
-[Saumya Tiwari]
-
 [Ayush Anand]
+
+[Saumya Tiwari]
 
 [Himanshu Ranjan Mahato]
 
 📃 License
 This project is open source for educational purposes only.
-© 2025 XiBit Hackathon Team
+© 2025 XiBit Hackathon Team Brainware University
